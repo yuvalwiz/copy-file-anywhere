@@ -1,9 +1,11 @@
 {
-  "name": "copy-file-anywhere", 
-  "displayName": "Copy File Anywhere", 
-  "publisher": "yuvalwiz",  
-  "version": "0.0.1",
-  "engines": { "vscode": "^1.90.0" },
+  "name": "copy-file-anywhere",
+  "displayName": "Copy File Anywhere",
+  "publisher": "yuvalwiz",
+  "version": "0.0.2",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
   "license": "MIT",
   "main": "./dist/extension.js",
   "repository": {
@@ -43,4 +45,3 @@
     "esbuild": "^0.25.8"
   }
 }
-
