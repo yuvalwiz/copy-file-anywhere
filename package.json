@@ -13,7 +13,11 @@
   "scripts": {
     "dev": "esbuild src/extension.ts --bundle --sourcemap --watch --external:vscode --outfile=dist/extension.js",
     "build": "esbuild src/extension.ts --bundle --platform=node --minify --external:vscode --outfile=dist/extension.js",
-    "vscode:prepublish": "npm run build"
+    "vscode:prepublish": "npm run build",
+    "publish:patch": "npm version patch && npx ovsx publish",
+    "publish:minor": "npm version minor && npx ovsx publish",
+    "publish:major": "npm version major && npx ovsx publish",
+    "publish": "npm run publish:patch"
   },
   "contributes": {
     "commands": [
