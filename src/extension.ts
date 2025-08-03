@@ -28,7 +28,7 @@ async function copyToClipboard(payload: string, label: string, method: string = 
 export function activate(context: vscode.ExtensionContext) {
   // Command 1 – hard‑coded path "script"
   context.subscriptions.push(
-    vscode.commands.registerCommand('copyfile.heredocDefault', async () => {
+    vscode.commands.registerCommand('copyfileanywhere.heredoc', async () => {
       const ed = vscode.window.activeTextEditor;
       if (!ed) { return; }
       await copyToClipboard(wrap(ed.document.getText(), 'script'), 'script');
@@ -37,7 +37,7 @@ export function activate(context: vscode.ExtensionContext) {
 
   // Command 2 – prompt for any path
   context.subscriptions.push(
-    vscode.commands.registerCommand('copyfile.heredocCustom', async () => {
+    vscode.commands.registerCommand('copyfileanywhere.heredocCustom', async () => {
       const ed = vscode.window.activeTextEditor;
       if (!ed) { return; }
       const path = await vscode.window.showInputBox({
@@ -53,7 +53,7 @@ export function activate(context: vscode.ExtensionContext) {
 
   // Command 3 – base64 hard‑coded path "script"
   context.subscriptions.push(
-    vscode.commands.registerCommand('copyfile.base64Default', async () => {
+    vscode.commands.registerCommand('copyfileanywhere.base64', async () => {
       const ed = vscode.window.activeTextEditor;
       if (!ed) { return; }
       await copyToClipboard(wrapBase64(ed.document.getText(), 'script'), 'script', 'Base64');
@@ -62,7 +62,7 @@ export function activate(context: vscode.ExtensionContext) {
 
   // Command 4 – base64 prompt for any path
   context.subscriptions.push(
-    vscode.commands.registerCommand('copyfile.base64Custom', async () => {
+    vscode.commands.registerCommand('copyfileanywhere.base64Custom', async () => {
       const ed = vscode.window.activeTextEditor;
       if (!ed) { return; }
       const path = await vscode.window.showInputBox({

@@ -24,19 +24,19 @@
   "contributes": {
     "commands": [
       {
-        "command": "copyfile.heredocDefault",
+        "command": "copyfileanywhere.heredoc",
         "title": "Heredoc: wrap current file → script"
       },
       {
-        "command": "copyfile.heredocCustom",
-        "title": "Heredoc: wrap current file → custom path"
-      },
-      {
-        "command": "copyfile.base64Default",
+        "command": "copyfileanywhere.base64",
         "title": "Base64: copy current file → script"
       },
       {
-        "command": "copyfile.base64Custom",
+        "command": "copyfileanywhere.heredocCustom",
+        "title": "Heredoc: wrap current file → custom path"
+      },
+      {
+        "command": "copyfileanywhere.base64Custom",
         "title": "Base64: copy current file → custom path"
       }
     ]
