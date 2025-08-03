@@ -1,10 +1,10 @@
 # Copy File Anywhere
 
-A VS Code extension that lets you copy files to another system. Places a command in your clipboard the will create the file upon being pasted to a shell.
+A VS Code extension that lets you copy files to another system. Places a command in your clipboard that'll create the file upon being pasted to a shell.
 
 ## Features
 
-This extension provides four commands to copy files for terminal recreation:
+This extension provides four commands to copy files:
 
 **Heredoc Method:**
 Uses a Heredoc, great for smaller text files. **Note**: will append a newline.
@@ -49,9 +49,4 @@ echo '{FILE-BASE64-ENCODED}' | base64 -d > 'script' ; chmod +x 'script'
 
 No additional requirements or dependencies.
 
-## Release Notes
-
-### 0.0.1
-
-Initial release of Copy File Anywhere extension.
 
