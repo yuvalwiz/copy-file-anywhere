@@ -1,0 +1,38 @@
+{
+  "name": "copy-file-anywhere", 
+  "displayName": "Copy File Anywhere", 
+  "publisher": "yuvalwiz",  
+  "version": "0.0.1",
+  "engines": { "vscode": "^1.90.0" },
+  "license": "MIT",
+  "main": "./dist/extension.js",
+  "scripts": {
+    "dev": "esbuild src/extension.ts --bundle --sourcemap --watch --external:vscode --outfile=dist/extension.js",
+    "build": "esbuild src/extension.ts --bundle --platform=node --minify --external:vscode --outfile=dist/extension.js",
+    "vscode:prepublish": "npm run build"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "copyfile.heredocDefault",
+        "title": "Heredoc: wrap current file → script"
+      },
+      {
+        "command": "copyfile.heredocCustom",
+        "title": "Heredoc: wrap current file → custom path"
+      },
+      {
+        "command": "copyfile.base64Default",
+        "title": "Base64: copy current file → script"
+      },
+      {
+        "command": "copyfile.base64Custom",
+        "title": "Base64: copy current file → custom path"
+      }
+    ]
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.8"
+  }
+}
+
