@@ -6,6 +6,10 @@
   "engines": { "vscode": "^1.90.0" },
   "license": "MIT",
   "main": "./dist/extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuvalwiz/copy-file-anywhere"
+  },
   "scripts": {
     "dev": "esbuild src/extension.ts --bundle --sourcemap --watch --external:vscode --outfile=dist/extension.js",
     "build": "esbuild src/extension.ts --bundle --platform=node --minify --external:vscode --outfile=dist/extension.js",
