@@ -32,6 +32,14 @@
         "title": "Base64: copy current file → script"
       },
       {
+        "command": "copyfileanywhere.heredocFileName",
+        "title": "Heredoc: wrap current file → filename"
+      },
+      {
+        "command": "copyfileanywhere.base64FileName",
+        "title": "Base64: copy current file → filename"
+      },
+      {
         "command": "copyfileanywhere.heredocCustom",
         "title": "Heredoc: wrap current file → custom path"
       },

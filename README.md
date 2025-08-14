@@ -4,17 +4,19 @@ A VS Code extension that lets you copy files to another system. Places a command
 
 ## Features
 
-This extension provides four commands to copy files:
+This extension provides six commands to copy files:
 
 **Heredoc Method:**
 Uses a Heredoc, great for smaller text files. **Note**: will append a newline.
 - **Heredoc: wrap current file → script** - Generates a command that'll copy to a file named `script`.
 - **Heredoc: wrap current file → custom path** - Prompts you for a custom output path.
+- **Heredoc: wrap current file → filename** - Uses the current file's name as the target.
 
 **Base64 Method:**
 Uses base64, target shell must have the `base64` tool installed.
 - **Base64: copy current file → script**
 - **Base64: copy current file → custom path**
+- **Base64: copy current file → filename**
 
 ### How it works
 The extensin copies to following to your clipboard.
@@ -40,8 +42,10 @@ echo '{FILE-BASE64-ENCODED}' | base64 -d > 'script' ; chmod +x 'script'
 3. Run one of these commands:
    - `Heredoc: wrap current file → script`
    - `Heredoc: wrap current file → custom path`
+   - `Heredoc: wrap current file → filename`
    - `Base64: copy current file → script`
-   - `Base64: copy current file → custom path` 
+   - `Base64: copy current file → custom path`
+   - `Base64: copy current file → filename` 
 4. The transfer command is copied to your clipboard
 5. Paste it in to the target terminal.
 

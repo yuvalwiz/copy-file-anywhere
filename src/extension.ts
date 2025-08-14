@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import { randomBytes } from 'crypto';
+import { basename } from 'path';
 
 function uniqueMarker(text: string): string {
   // Generate a marker that is guaranteed not to clash with the file’s content
@@ -73,6 +74,26 @@ export function activate(context: vscode.ExtensionContext) {
       if (path) {
         await copyToClipboard(wrapBase64(ed.document.getText(), path), path, 'Base64');
       }
+    })
+  );
+
+  // Command 5 – heredoc using filename
+  context.subscriptions.push(
+    vscode.commands.registerCommand('copyfileanywhere.heredocFileName', async () => {
+      const ed = vscode.window.activeTextEditor;
+      if (!ed) { return; }
+      const fileName = basename(ed.document.fileName);
+      await copyToClipboard(wrap(ed.document.getText(), fileName), fileName);
+    })
+  );
+
+  // Command 6 – base64 using filename
+  context.subscriptions.push(
+    vscode.commands.registerCommand('copyfileanywhere.base64FileName', async () => {
+      const ed = vscode.window.activeTextEditor;
+      if (!ed) { return; }
+      const fileName = basename(ed.document.fileName);
+      await copyToClipboard(wrapBase64(ed.document.getText(), fileName), fileName, 'Base64');
     })
   );
 }
